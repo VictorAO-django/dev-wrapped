@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: dev-wrapped
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_VERSION
+        value: 22.20.0
+      # Auth.js refuses requests from hosts it doesn't recognize by default -
+      # required for any deployment that isn't Vercel.
+      - key: AUTH_TRUST_HOST
+        value: "true"
+      # Render can generate this one for you automatically.
+      - key: AUTH_SECRET
+        generateValue: true
+      # Set these in the Render dashboard after creating the service -
+      # never stored in this file.
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: AUTH_GITHUB_ID
+        sync: false
+      - key: AUTH_GITHUB_SECRET
+        sync: false
+      - key: AUTH_URL
+        sync: false
