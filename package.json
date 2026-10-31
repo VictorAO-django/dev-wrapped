@@ -1,6 +1,8 @@
 {
   "name": "github-wrapped-next",
   "version": "0.1.0",
+  "description": "Your GitHub year, wrapped Spotify-Wrapped-style and roasted by AI (Gemma, via the Gemini API).",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,7 +11,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@google/genai": "^2.32.0",
     "next": "16.4.3",
+    "next-auth": "^5.0.0-beta.32",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },
